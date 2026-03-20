@@ -13,29 +13,33 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tb_category")
 public class Category implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	@JsonIgnore
+
+	// relacionamento muitos-para-muitos com Product
+	// mappedBy indica que o controle está na classe Product
+	@JsonIgnore // evita loop infinito no JSON
 	@ManyToMany(mappedBy = "categories")
 	private Set<Product> products = new HashSet<>();
 	
 	public Category() {
-
 	}
 
 	public Category(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
+
+	// getters e setters
 
 	public Long getId() {
 		return id;
@@ -73,7 +77,4 @@ public class Category implements Serializable {
 		Category other = (Category) obj;
 		return Objects.equals(id, other.id);
 	}
-
-	
-
 }

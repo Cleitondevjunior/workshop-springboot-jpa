@@ -16,11 +16,14 @@ public class OrderItemPK implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonIgnore //  evita loop infinito no JSON
+	// referência do pedido
+	// JsonIgnore para evitar loop infinito na serialização
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "order_id")
 	private Order order;
 
+	// referência do produto
 	@ManyToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
@@ -58,7 +61,6 @@ public class OrderItemPK implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		OrderItemPK other = (OrderItemPK) obj;
-		return Objects.equals(order, other.order)
-				&& Objects.equals(product, other.product);
+		return Objects.equals(order, other.order) && Objects.equals(product, other.product);
 	}
 }
