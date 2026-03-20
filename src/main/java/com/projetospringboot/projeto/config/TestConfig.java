@@ -1,5 +1,4 @@
-package com.projetospringboot.projeto._1.config;
-
+package com.projetospringboot.projeto.config;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.projetospringboot.projeto._1.repositories.UserRepository;
 import com.projetospringboot.projeto.entities.User;
+import com.projetospringboot.projeto.repositories.UserRepository;
 
 @Configuration
 @Profile("test")

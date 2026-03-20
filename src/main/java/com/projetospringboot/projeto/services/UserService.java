@@ -1,4 +1,4 @@
-package com.projetospringboot.projeto._1.services;
+package com.projetospringboot.projeto.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.projetospringboot.projeto._1.repositories.UserRepository;
 import com.projetospringboot.projeto.entities.User;
+import com.projetospringboot.projeto.repositories.UserRepository;
 
 @Service
 public class UserService {

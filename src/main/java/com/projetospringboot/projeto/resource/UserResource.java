@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.projetospringboot.projeto._1.services.UserService;
 import com.projetospringboot.projeto.entities.User;
+import com.projetospringboot.projeto.services.UserService;
 
 @RestController
-@RequestMapping(value="/users")
+@RequestMapping(value="/users")	
 public class UserResource {
 	@Autowired
 	private UserService userService;
