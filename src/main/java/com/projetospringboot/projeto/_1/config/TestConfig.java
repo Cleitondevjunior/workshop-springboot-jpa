@@ -7,11 +7,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.projetospringboot.projeto._1.entities.User;
 import com.projetospringboot.projeto._1.repositories.UserRepository;
+import com.projetospringboot.projeto.entities.User;
 
 @Configuration
 @Profile("test")
+
 public class TestConfig implements CommandLineRunner {
 	
 	@Autowired
