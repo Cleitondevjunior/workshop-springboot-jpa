@@ -16,7 +16,7 @@ public class OrderItemPK implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@JsonIgnore // 🔥 evita loop infinito no JSON
+	@JsonIgnore //  evita loop infinito no JSON
 	@ManyToOne
 	@JoinColumn(name = "order_id")
 	private Order order;

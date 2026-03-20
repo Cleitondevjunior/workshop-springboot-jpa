@@ -3,6 +3,7 @@ package com.projetospringboot.projeto.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.projetospringboot.projeto.entities.pk.OrderItemPK;
 
 import jakarta.persistence.EmbeddedId;
@@ -16,7 +17,7 @@ public class OrderItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private OrderItemPK id = new OrderItemPK(); // 🔥 IMPORTANTE
+	private OrderItemPK id = new OrderItemPK(); 
 
 	private Integer quantity;
 	private Double price;
@@ -31,8 +32,8 @@ public class OrderItem implements Serializable {
 		this.price = price;
 	}
 
-	// 🔥 GETTERS E SETTERS CORRETOS
-
+	//  GETTERS E SETTERS 
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 	}
@@ -65,7 +66,8 @@ public class OrderItem implements Serializable {
 		this.price = price;
 	}
 
-	// 🔥 MÉTODO EXTRA (TOP PRA ENTREVISTA)
+	// Calcula o valor total deste item (preço unitário * quantidade)
+	// usado para compor o total do pedido
 	public Double getSubTotal() {
 		return price * quantity;
 	}
