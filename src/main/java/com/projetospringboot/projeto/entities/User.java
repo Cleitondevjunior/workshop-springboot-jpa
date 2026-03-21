@@ -28,7 +28,7 @@ public class User implements Serializable {
 	private String email;
 	private String phone;
 
-	@JsonIgnore // eseencial para a senha evita que a senha saia da API
+	//@JsonIgnore // eseencial para a senha evita que  saia da API
 	private String password;
 
 	@JsonIgnore // evita loop infinito (User → Order → User...)
